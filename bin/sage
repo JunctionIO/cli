@@ -1,0 +1,30 @@
+#!/usr/bin/env php
+<?php
+
+use Meritum\Cli\CliKernel;
+use Georgeff\Kernel\Support\Env;
+use Georgeff\Kernel\Environment;
+use Junction\Cli\ModuleRepository;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$environment = match (Env::get('APP_ENV', 'production')) {
+    'local'       => Environment::Local,
+    'test',
+    'testing'     => Environment::Testing,
+    'dev',
+    'develop',
+    'development' => Environment::Development,
+    'stage',
+    'staging'     => Environment::Staging,
+    default       => Environment::Production
+};
+
+$kernel = new CliKernel($environment, debug: Env::get('APP_DEBUG', false));
+
+$kernel->setName(Env::get('APP_NAME', 'Sage: Powered by Meritum'))
+       ->addRepository(new ModuleRepository());
+
+$kernel->boot();
+
+exit($kernel->run());

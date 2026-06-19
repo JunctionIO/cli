@@ -1,0 +1,35 @@
+{
+  "name": "meritum/sage",
+  "description": "Meritum CLI application scaffold",
+  "type": "project",
+  "license": "MIT",
+  "require": {
+    "php": "^8.4",
+    "meritum/cli": "^1.0",
+    "meritum/migrations": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Junction\\Cli\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Junction\\Cli\\": "tests/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "scripts": {
+    "test": [
+      "vendor/bin/phpunit"
+    ],
+    "sage": [
+      "vendor/bin/sage"
+    ]
+  }
+}
