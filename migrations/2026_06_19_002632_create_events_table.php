@@ -9,7 +9,7 @@ return new class implements MigrationInterface {
     {
         $schema->create('events', function (Blueprint $blueprint) {
             $blueprint->uuid('id')->unique()->primary();
-            $blueprint->string('name')->unique();
+            $blueprint->string('name')->unique()->index();
             $blueprint->text('description')->nullable();
             $blueprint->timestamps();
         });
