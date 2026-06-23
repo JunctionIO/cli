@@ -8,7 +8,7 @@ return new class implements MigrationInterface {
     public function up(SchemaInterface $schema): void
     {
         $schema->create('destination_types', function (Blueprint $blueprint) {
-            $blueprint->uuid('id')->unique()->primary();
+            $blueprint->string('id')->primary();
             $blueprint->string('name')->unique();
             $blueprint->string('queue')->unique();
             $blueprint->text('description')->nullable();

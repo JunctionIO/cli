@@ -8,8 +8,8 @@ return new class implements MigrationInterface {
     public function up(SchemaInterface $schema): void
     {
         $schema->create('events', function (Blueprint $blueprint) {
-            $blueprint->uuid('id')->unique()->primary();
-            $blueprint->string('name')->unique()->index();
+            $blueprint->string('id')->primary();
+            $blueprint->string('name')->unique();
             $blueprint->text('description')->nullable();
             $blueprint->timestamps();
         });

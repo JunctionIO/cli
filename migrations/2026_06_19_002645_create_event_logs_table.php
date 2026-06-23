@@ -8,9 +8,9 @@ return new class implements MigrationInterface {
     public function up(SchemaInterface $schema): void
     {
         $schema->create('event_logs', function (Blueprint $blueprint) {
-            $blueprint->uuid('id')->unique()->primary();
-            $blueprint->uuid('trace_id')->index();
-            $blueprint->uuid('event_id')->index();
+            $blueprint->string('id')->primary();
+            $blueprint->string('trace_id')->index();
+            $blueprint->string('event_id')->index();
             $blueprint->json('payload');
             $blueprint->string('source_ip')->nullable()->index();
             $blueprint->string('auth_id')->index();

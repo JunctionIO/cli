@@ -8,10 +8,10 @@ return new class implements MigrationInterface {
     public function up(SchemaInterface $schema): void
     {
         $schema->create('event_log_destinations', function (Blueprint $blueprint) {
-            $blueprint->uuid('id')->unique()->primary();
-            $blueprint->uuid('trace_id')->index();
-            $blueprint->uuid('event_log_id')->index();
-            $blueprint->uuid('destination_id')->index();
+            $blueprint->string('id')->primary();
+            $blueprint->string('trace_id')->index();
+            $blueprint->string('event_log_id')->index();
+            $blueprint->string('destination_id')->index();
             $blueprint->string('status')->index();
             $blueprint->timestamp('attempted_at')->nullable();
             $blueprint->text('error')->nullable();
@@ -24,4 +24,3 @@ return new class implements MigrationInterface {
         $schema->dropIfExists('event_log_destinations');
     }
 };
-

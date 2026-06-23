@@ -8,9 +8,9 @@ return new class implements MigrationInterface {
     public function up(SchemaInterface $schema): void
     {
         $schema->create('destination_events', function (Blueprint $blueprint) {
-            $blueprint->id();
-            $blueprint->uuid('destination_id')->index();
-            $blueprint->uuid('event_id')->index();
+            $blueprint->string('id')->primary();
+            $blueprint->string('destination_id')->index();
+            $blueprint->string('event_id')->index();
             $blueprint->timestamp('created_at');
         });
     }
@@ -20,4 +20,3 @@ return new class implements MigrationInterface {
         $schema->dropIfExists('destination_events');
     }
 };
-
