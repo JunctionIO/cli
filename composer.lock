@@ -133,16 +133,16 @@
         },
         {
             "name": "georgeff/container",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MikeGeorgeff/container.git",
-                "reference": "a0407c4292dcbeb15a21e6480b3575af8e144551"
+                "reference": "361c69213ea85aa6066bb8318063409db743d8aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MikeGeorgeff/container/zipball/a0407c4292dcbeb15a21e6480b3575af8e144551",
-                "reference": "a0407c4292dcbeb15a21e6480b3575af8e144551",
+                "url": "https://api.github.com/repos/MikeGeorgeff/container/zipball/361c69213ea85aa6066bb8318063409db743d8aa",
+                "reference": "361c69213ea85aa6066bb8318063409db743d8aa",
                 "shasum": ""
             },
             "require": {
@@ -171,25 +171,25 @@
                     "role": "Author"
                 }
             ],
-            "description": "A light weight DI container",
+            "description": "A lightweight dependency injection container implementing PSR-11",
             "support": {
                 "issues": "https://github.com/MikeGeorgeff/container/issues",
-                "source": "https://github.com/MikeGeorgeff/container/tree/1.0.0"
+                "source": "https://github.com/MikeGeorgeff/container/tree/1.1.0"
             },
-            "time": "2026-02-07T20:27:57+00:00"
+            "time": "2026-06-20T01:46:56+00:00"
         },
         {
             "name": "georgeff/database",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MikeGeorgeff/database.git",
-                "reference": "0eb13e1d0cdef5790a4c046a292cfe6453de30a7"
+                "reference": "5ec9457f1e6789bdaf8862d24d02c0b59b888f3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MikeGeorgeff/database/zipball/0eb13e1d0cdef5790a4c046a292cfe6453de30a7",
-                "reference": "0eb13e1d0cdef5790a4c046a292cfe6453de30a7",
+                "url": "https://api.github.com/repos/MikeGeorgeff/database/zipball/5ec9457f1e6789bdaf8862d24d02c0b59b888f3c",
+                "reference": "5ec9457f1e6789bdaf8862d24d02c0b59b888f3c",
                 "shasum": ""
             },
             "require": {
@@ -222,26 +222,26 @@
             "description": "A fluent query builder and database abstraction layer with read replica and transaction support.",
             "support": {
                 "issues": "https://github.com/MikeGeorgeff/database/issues",
-                "source": "https://github.com/MikeGeorgeff/database/tree/1.0.0"
+                "source": "https://github.com/MikeGeorgeff/database/tree/1.1.0"
             },
-            "time": "2026-04-02T21:01:05+00:00"
+            "time": "2026-06-21T20:37:05+00:00"
         },
         {
             "name": "georgeff/kernel",
-            "version": "1.8.0",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MikeGeorgeff/kernel.git",
-                "reference": "a5bd0f7558f5e7ac1d800fb0a9f0d387673f9d1a"
+                "reference": "ae90db48b3a9f6e4127695dc83492416ef8d8289"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MikeGeorgeff/kernel/zipball/a5bd0f7558f5e7ac1d800fb0a9f0d387673f9d1a",
-                "reference": "a5bd0f7558f5e7ac1d800fb0a9f0d387673f9d1a",
+                "url": "https://api.github.com/repos/MikeGeorgeff/kernel/zipball/ae90db48b3a9f6e4127695dc83492416ef8d8289",
+                "reference": "ae90db48b3a9f6e4127695dc83492416ef8d8289",
                 "shasum": ""
             },
             "require": {
-                "georgeff/container": "^1.0",
+                "georgeff/container": "^1.1",
                 "php": "^8.2",
                 "psr/container": "^2.0",
                 "psr/event-dispatcher": "^1.0"
@@ -271,22 +271,22 @@
             "description": "A lightweight application kernel with service container bootstrapping and lifecycle events",
             "support": {
                 "issues": "https://github.com/MikeGeorgeff/kernel/issues",
-                "source": "https://github.com/MikeGeorgeff/kernel/tree/1.8.0"
+                "source": "https://github.com/MikeGeorgeff/kernel/tree/1.9.0"
             },
-            "time": "2026-06-18T19:24:35+00:00"
+            "time": "2026-06-20T03:49:50+00:00"
         },
         {
             "name": "georgeff/schema",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MikeGeorgeff/schema.git",
-                "reference": "d749d70ed74f4a660887385dbfce60c34537879c"
+                "reference": "cbd59c67e5a99f86dd069d86cd966e418beefeca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MikeGeorgeff/schema/zipball/d749d70ed74f4a660887385dbfce60c34537879c",
-                "reference": "d749d70ed74f4a660887385dbfce60c34537879c",
+                "url": "https://api.github.com/repos/MikeGeorgeff/schema/zipball/cbd59c67e5a99f86dd069d86cd966e418beefeca",
+                "reference": "cbd59c67e5a99f86dd069d86cd966e418beefeca",
                 "shasum": ""
             },
             "require": {
@@ -317,9 +317,9 @@
             "description": "Database schema builder — driver-agnostic blueprints compiled to SQL for MySQL, PostgreSQL, and SQLite",
             "support": {
                 "issues": "https://github.com/MikeGeorgeff/schema/issues",
-                "source": "https://github.com/MikeGeorgeff/schema/tree/1.1.0"
+                "source": "https://github.com/MikeGeorgeff/schema/tree/1.2.0"
             },
-            "time": "2026-06-14T03:48:28+00:00"
+            "time": "2026-06-23T19:41:55+00:00"
         },
         {
             "name": "meritum/cli",
