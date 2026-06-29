@@ -17,6 +17,7 @@ final class ModuleRepository implements ModuleRepositoryInterface
     {
         return [
             new AppModule(),
+            new Token\TokenModule(),
             new \Meritum\Migrations\Module\DatabaseModule(),
             new \Meritum\Migrations\Module\MigrationsModule(),
         ];
