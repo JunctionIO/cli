@@ -31,10 +31,10 @@ jobs:
       - name: Build and push image
         run: |
           VERSION="${{ github.ref_name }}"
-          devenv container \
+          devenv container copy \
             --registry docker://ghcr.io/junctionio/ \
             --copy-args="--dest-creds ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}" \
-            copy cli
+            cli
           CONTAINERS_REGISTRIES_CONF=/dev/null nix run nixpkgs#skopeo -- copy \
             --src-creds "${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}" \
             --dest-creds "${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}" \
