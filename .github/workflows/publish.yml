@@ -34,7 +34,6 @@ jobs:
       - name: Build and push image
         run: |
           VERSION="${{ github.ref_name }}"
-          IMAGE=$(devenv container build cli)
-          N2C=$(ls /nix/store/*-nix2container-*/bin/nix2container | head -1)
-          ${N2C} push ${IMAGE} ghcr.io/junctionio/cli:${VERSION}
-          ${N2C} push ${IMAGE} ghcr.io/junctionio/cli:latest
+          devenv container build cli
+          nix run nixpkgs#skopeo -- copy docker-archive:result docker://ghcr.io/junctionio/cli:${VERSION}
+          nix run nixpkgs#skopeo -- copy docker-archive:result docker://ghcr.io/junctionio/cli:latest
