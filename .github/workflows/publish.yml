@@ -28,16 +28,12 @@ jobs:
 
       - run: devenv shell -- composer install --no-dev --no-interaction --prefer-dist
 
-      - name: Build container
-        run: devenv container build cli
-
       - name: Log in to GHCR
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-      - name: Push image
+      - name: Build and push image
         run: |
           VERSION="${{ github.ref_name }}"
-          docker tag cli ghcr.io/junctionio/cli:${VERSION}
-          docker tag cli ghcr.io/junctionio/cli:latest
-          docker push ghcr.io/junctionio/cli:${VERSION}
-          docker push ghcr.io/junctionio/cli:latest
+          devenv container build cli
+          devenv container copy cli docker://ghcr.io/junctionio/cli:${VERSION}
+          devenv container copy cli docker://ghcr.io/junctionio/cli:latest
