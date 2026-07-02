@@ -1,9 +1,7 @@
 { pkgs, lib, config, ... }:
 let
   php = pkgs.php84.withExtensions ({ enabled, all }: enabled ++ [
-    # Add PDO extensions here:
-    # all.pdo_pgsql
-    # all.pdo_mysql
+    all.pdo_pgsql
   ]);
 in {
   packages = [
@@ -11,13 +9,6 @@ in {
   ] ++ lib.optionals (!config.container.isBuilding) [
     php.packages.composer
   ];
-
-  # Add services here:
-  # services.postgres = {
-  #   enable = true;
-  #   listen_addresses = "127.0.0.1";
-  # };
-  # services.redis.enable = true;
 
   enterShell = ''
     set +x

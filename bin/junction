@@ -22,7 +22,8 @@ $environment = match (Env::get('APP_ENV', 'production')) {
 
 $kernel = new CliKernel($environment, debug: Env::get('APP_DEBUG', false));
 
-$kernel->setName(Env::get('APP_NAME', 'Sage: Powered by Meritum'))
+$kernel->setName(Env::get('APP_NAME', 'Junction'))
+       ->setVersion(Env::get('APP_VERSION', 'dev'))
        ->addRepository(new ModuleRepository());
 
 $kernel->boot();

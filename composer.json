@@ -33,9 +33,6 @@
     ],
     "analyze": [
       "vendor/bin/phpstan"
-    ],
-    "sage": [
-      "vendor/bin/sage"
     ]
   }
 }
