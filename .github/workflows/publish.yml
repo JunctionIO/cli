@@ -35,5 +35,6 @@ jobs:
         run: |
           VERSION="${{ github.ref_name }}"
           IMAGE=$(devenv container build cli)
-          nix run github:nlewo/nix2container#nix2container -- push ${IMAGE} ghcr.io/junctionio/cli:${VERSION}
-          nix run github:nlewo/nix2container#nix2container -- push ${IMAGE} ghcr.io/junctionio/cli:latest
+          N2C=$(ls /nix/store/*-nix2container-*/bin/nix2container | head -1)
+          ${N2C} push ${IMAGE} ghcr.io/junctionio/cli:${VERSION}
+          ${N2C} push ${IMAGE} ghcr.io/junctionio/cli:latest
