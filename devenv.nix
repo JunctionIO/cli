@@ -12,6 +12,7 @@ in {
 
   containers.cli = {
     name = "cli";
+    registry = "docker://ghcr.io/junctionio/";
     entrypoint = [ "php" "/app/bin/junction" ];
     copyToRoot = pkgs.buildEnv {
       name = "cli-app";

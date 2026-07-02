@@ -28,12 +28,15 @@ jobs:
 
       - run: devenv shell -- composer install --no-dev --no-interaction --prefer-dist
 
-      - name: Log in to GHCR
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-
       - name: Build and push image
         run: |
           VERSION="${{ github.ref_name }}"
-          devenv container build cli
-          CONTAINERS_REGISTRIES_CONF=/dev/null nix run nixpkgs#skopeo -- copy docker-archive:result docker://ghcr.io/junctionio/cli:${VERSION}
-          CONTAINERS_REGISTRIES_CONF=/dev/null nix run nixpkgs#skopeo -- copy docker-archive:result docker://ghcr.io/junctionio/cli:latest
+          devenv container \
+            --registry docker://ghcr.io/junctionio/ \
+            --copy-args="--dest-creds ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}" \
+            copy cli
+          CONTAINERS_REGISTRIES_CONF=/dev/null nix run nixpkgs#skopeo -- copy \
+            --src-creds "${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}" \
+            --dest-creds "${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}" \
+            docker://ghcr.io/junctionio/cli:latest \
+            docker://ghcr.io/junctionio/cli:${VERSION}
