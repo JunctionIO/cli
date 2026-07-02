@@ -31,7 +31,7 @@ jobs:
       - name: Build and push image
         run: |
           VERSION="${{ github.ref_name }}"
-          devenv container copy \
+          CONTAINERS_REGISTRIES_CONF=/dev/null devenv container copy \
             --registry docker://ghcr.io/junctionio/ \
             --copy-args="--dest-creds ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}" \
             cli
