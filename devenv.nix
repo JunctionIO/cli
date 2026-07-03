@@ -13,7 +13,11 @@ in {
   containers.cli = {
     name = "cli";
     registry = "docker://ghcr.io/junctionio/";
-    entrypoint = [ "php" "/app/bin/junction" ];
+    # devenv's containers.<name>.copyToRoot lands under /env, not
+    # container root, so junction is at /env/app/bin/junction. Also, the
+    # image has no PATH env var set, so a bare "php" command name won't
+    # resolve - use php's absolute store path instead.
+    entrypoint = [ "${php}/bin/php" "/env/app/bin/junction" ];
     copyToRoot = pkgs.buildEnv {
       name = "cli-app";
       paths = [
