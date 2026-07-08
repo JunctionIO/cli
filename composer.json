@@ -1,6 +1,6 @@
 {
-  "name": "meritum/sage",
-  "description": "Meritum CLI application scaffold",
+  "name": "junction/cli",
+  "description": "Junction CLI application",
   "type": "project",
   "license": "MIT",
   "require": {
